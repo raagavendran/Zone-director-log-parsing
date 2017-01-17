@@ -1,12 +1,12 @@
 import re
 import MySQLdb
 
-db = MySQLdb.connect("localhost","root","asm123","ap" )
-file = open('/home/asm/Downloads/aamac.txt','rb').read()
+
 
 class abc:
     def __init__(self):
-
+        db = MySQLdb.connect("localhost","root","asm123","ap" )
+        file = open('/home/asm/Downloads/aamac.txt','rb').read()
         #MACAddress
         pmac = re.compile(ur'([0-9a-f]{2}(?::[0-9a-f]{2}){5})', re.IGNORECASE)
         foundmac = re.findall(pmac, file)
